@@ -5,9 +5,18 @@
     <script src="build/JSXTransformer.js"></script>
   </head>
   <body>
-    <div id="mount-point"></div>
+    <div id="mount-name"></div>
+    <div id="mount-counter"></div>
     <script type="text/jsx">
       /** @jsx React.DOM */
+      var NameComponent = React.createClass({
+        render: function(){
+          return (
+            <h1>Hello, {this.props.name}!</h1>
+          );
+        }
+      });
+
       var Counter = React.createClass({
         incrementCount: function() {
           this.setState({
@@ -29,7 +38,8 @@
         }
       });
 
-      React.renderComponent(<Counter/>, document.getElementById('mount-point'));
+      React.renderComponent(<NameComponent name="Brett" />, document.getElementById('mount-name'));
+      React.renderComponent(<Counter/>, document.getElementById('mount-counter'));
     </script>
   </body>
 </html>

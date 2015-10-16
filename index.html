@@ -7,7 +7,19 @@
   <body>
     <div id="mount-point"></div>
     <script type="text/jsx">
-      // React
+      /** @jsx React.DOM */
+      React.render(
+        <MyComponent/>
+        document.getElementById('myDiv')
+      );
     </script>
   </body>
 </html>
+
+var MyComponent = React.createClass({
+  render: function() {
+    return (
+      <h1>Hello, world!</h1>
+    );
+  }
+});

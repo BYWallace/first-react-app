@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    // TODO: Not the latest version of react
     <script src="build/react.js"></script>
     <script src="build/JSXTransformer.js"></script>
   </head>
@@ -9,20 +8,28 @@
     <div id="mount-point"></div>
     <script type="text/jsx">
       /** @jsx React.DOM */
-      var MyComponent = React.createClass({
+      var Counter = React.createClass({
+        incrementCount: function() {
+          this.setState({
+            count: this.state.count + 1
+          });
+        },
         getInitialState: function() {
           return {
-            count: 5
+            count: 0
           }
         },
         render: function() {
           return (
-            <h1>{this.state.count}</h1>
+            <div class="my-component">
+              <h1>Count: {this.state.count}</h1>
+              <button type="button" onClick={this.incrementCount}>Increment</button>
+            </div>
           );
         }
       });
 
-      React.renderComponent(<MyComponent name="Brett" />, document.getElementById('mount-point'));
+      React.renderComponent(<Counter/>, document.getElementById('mount-point'));
     </script>
   </body>
 </html>

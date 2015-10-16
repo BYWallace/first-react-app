@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    // TODO: Not the latest version of react
     <script src="build/react.js"></script>
     <script src="build/JSXTransformer.js"></script>
   </head>
@@ -21,7 +22,7 @@
         }
       });
 
-      React.render(<MyComponent name="Brett" />, document.getElementById('myDiv'));
+      React.renderComponent(<MyComponent name="Brett" />, document.getElementById('mount-point'));
     </script>
   </body>
 </html>
